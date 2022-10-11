@@ -12,9 +12,9 @@ class ExploreScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             return ListView(scrollDirection: Axis.vertical, children: [
-              TodayRecipeListView(recipes: snapshot.data.todayRecipes),
+              TodayRecipeListView(recipes: snapshot.data!.todayRecipes),
               const SizedBox(height: 16),
-              FriendPostListView(friendPosts: snapshot.data.friendPosts)
+              FriendPostListView(friendPosts: snapshot.data!.friendPosts)
             ]);
           } else {
             return const Center(child: CircularProgressIndicator());
