@@ -15,10 +15,10 @@ class _HomeState extends State<Home> {
   static List<Widget> pages = <Widget>[
     ExploreScreen(),
     RecipesScreen(),
-    const Card1(
+    Card1(
       recipe: null,
     ),
-    const Card2(
+    Card2(
       recipe: null,
     ),
     Container(
