@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fooderlich/models/models.dart';
 import '../api/mock_fooderlich_service.dart';
 import '../components/components.dart';
 
@@ -7,7 +8,7 @@ class ExploreScreen extends StatelessWidget {
   ExploreScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
+    return FutureBuilder<ExploreData>(
         future: mockService.getExploreData(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
