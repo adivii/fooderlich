@@ -2,7 +2,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:fooderlich/models/models.dart';
-import 'package:fooderlich/screens/screens.dart';
 
 class AppRouter extends RouterDelegate
     with ChangeNotifier, PopNavigatorRouterDelegateMixin {
@@ -13,7 +12,10 @@ class AppRouter extends RouterDelegate
   final GroceryManager groceryManager;
   final ProfileManager profileManager;
 
-  AppRouter({this.appStateManager, this.groceryManager, this.profileManagers})
+  AppRouter(
+      {required this.profileManager,
+      required this.appStateManager,
+      required this.groceryManager})
       : navigatorKey = GlobalKey<NavigatorState>() {
     appStateManager.addListener(notifyListeners);
     groceryManager.addListener(notifyListeners);
@@ -33,7 +35,7 @@ class AppRouter extends RouterDelegate
   Widget build(BuildContext context) {
     return Navigator(
       key: navigatorKey,
-      pages: [
+      pages: const [
         // TODO: Add SplashScreen
         // TODO: Add LoginScreen
         // TODO: Add OnboardingScreen
